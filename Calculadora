@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ClaseMartes24
+{
+    class Program
+    {
+        static int numero1 = 0;
+        static int numero2 = 0;
+        static void Main(string[] args)
+        {
+            int opcion = 0;
+            bool menu = true;
+
+            while (menu)
+            {
+                MenuPrincipal();
+                opcion = int.Parse(Console.ReadLine());
+                switch (opcion)
+                {
+                    case 1:
+                        SolicitarNumeros();
+                        Console.WriteLine("El resultado de la suma es :" + (numero1 + numero2));
+                        break;
+                    case 2:
+                        SolicitarNumeros();
+                        Console.WriteLine("El resultado de la resta es :" + (numero1 - numero2));
+                        break;
+                    case 3:
+                        SolicitarNumeros();
+                        Console.WriteLine("El resultado de la multiplicación es :" + (numero1 * numero2));
+                        break;
+                    case 4:
+                        SolicitarNumeros();
+                        Console.WriteLine("El resultado de la división es :" + (numero1 / numero2));
+                        break;
+                    case 5:
+                        menu = false;
+                        break;
+                    default:
+                        Console.WriteLine("Numero incorrecto");
+                        break;
+                }
+            }
+
+
+
+        }
+        static void MenuPrincipal()
+        {
+            Console.WriteLine("Selecciona una opción de la lista");
+            Console.WriteLine("1.- Suma");
+            Console.WriteLine("2.- Resta");
+            Console.WriteLine("3.- Multiplicación");
+            Console.WriteLine("4.- División");
+            Console.WriteLine("5.- Salir");
+        }
+
+        static void SolicitarNumeros()
+        {
+            Console.WriteLine("Ingresa el valor de numero1: ");
+            numero1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingresa el valor de numero2: ");
+            numero2 = int.Parse(Console.ReadLine());
+        }
+    }
+}
